@@ -1,0 +1,20 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: orchestrator-service
+
+services:
+  request-router:
+    base-url: http://localhost:8081
+  execution-window:
+    base-url: http://localhost:8082
+  cache:
+    base-url: http://localhost:8091
+  faas-invoker:
+    base-url: http://localhost:8090
+
+orchestrator:
+  execution-window-ms: 200
+  follower-wait-timeout-ms: 5000

@@ -1,0 +1,16 @@
+server:
+  port: 8088
+
+spring:
+  application:
+    name: api-gateway
+
+gateway:
+  orchestrator-base-url: http://localhost:8080
+  cache-base-url: http://localhost:8091
+  health-targets:
+    orchestrator: http://localhost:8080/actuator-like/health
+    request-router: http://localhost:8081/actuator-like/health
+    execution-window: http://localhost:8082/actuator-like/health
+    faas-invoker: http://localhost:8090/health
+    result-cache: http://localhost:8091/health
